@@ -1,7 +1,7 @@
 
 resource "azurerm_mssql_firewall_rule" "example" {
-  name             = "Eli Home"
+  name             = "Abc Home"
   server_id        = azurerm_mssql_server.db.id
-  start_ip_address = "99.3.71.225"
-  end_ip_address   = "99.3.71.225"
+  start_ip_address = "73.144.140.201"
+  end_ip_address   = "73.144.140.201"
 }

@@ -2,7 +2,7 @@
 terraform {
   backend "azurerm" {
     resource_group_name  = "terraform-rg"
-    storage_account_name = "lobterraformstatestor"
+    storage_account_name = "lobterraformstatestorejl"
     container_name       = "stateprod"
     key                  = "dev.terraform.tfstate"
   }
