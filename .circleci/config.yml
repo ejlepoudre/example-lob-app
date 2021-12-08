@@ -1,7 +1,7 @@
 version: 2.1
 
-orbs:
-  discord: antonioned/discord@0.1.0
+#orbs:
+#  discord: antonioned/discord@0.1.0
 
 jobs:
   build-application:
@@ -82,11 +82,11 @@ jobs:
             - app-migrate
             - tools/PollHealthcheck
 
-      - discord/status:
-          fail_only: true
-          failure_message: "Application: **$CIRCLE_JOB** job has failed!"
-          webhook: "${DISCORD_STATUS_WEBHOOK}"
-          mentions: "@employees"
+      #- discord/status:
+      #    fail_only: true
+      #    failure_message: "Application: **$CIRCLE_JOB** job has failed!"
+      #    webhook: "${DISCORD_STATUS_WEBHOOK}"
+      #    mentions: "@employees"
 
   terraform-plan:
     docker:
@@ -241,16 +241,16 @@ jobs:
             az webapp stop -g ${AZURE_RG_NAME} -n ${AZURE_APP_NAME} -s staging
           when: always
 
-      - discord/status:
-          fail_only: true
-          failure_message: "Application: **$CIRCLE_JOB** deploy has failed!"
-          webhook: "${DISCORD_STATUS_WEBHOOK}"
-          mentions: "@employees"
+      #- discord/status:
+      #    fail_only: true
+      #    failure_message: "Application: **$CIRCLE_JOB** deploy has failed!"
+      #    webhook: "${DISCORD_STATUS_WEBHOOK}"
+      #    mentions: "@employees"
 
-      - discord/status:
-          success_only: true
-          success_message: "Application: **$CIRCLE_JOB** deployed successfully: $VERSION_NUMBER"
-          webhook: "${DISCORD_STATUS_WEBHOOK}"
+      #- discord/status:
+      #    success_only: true
+      #    success_message: "Application: **$CIRCLE_JOB** deployed successfully: $VERSION_NUMBER"
+      #    webhook: "${DISCORD_STATUS_WEBHOOK}"
 
 workflows:
   build_and_deploy:
