@@ -4,7 +4,7 @@ terraform {
     resource_group_name  = "terraform-rg"
     storage_account_name = "lobterraformstatestorejl"
     container_name       = "stateprod"
-    key                  = "dev.terraform.tfstate12345"
+    key                  = "dev.terraform.tfstate123456S"
   }
   
   required_providers {
