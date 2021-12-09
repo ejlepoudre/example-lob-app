@@ -229,9 +229,9 @@ jobs:
           name: Azure Production Swap
           command: |
             # Poll health endpoint, 500ms intervals, 15s timeout
-            echo "Running healthcheck poll: https://${AZURE_APP_STAGING_URL}/health"
-            cd /tmp/workspace/tools/PollHealthcheck
-            node index.js https://${AZURE_APP_STAGING_URL}/health 500 15000
+            #echo "Running healthcheck poll: https://${AZURE_APP_STAGING_URL}/health"
+            #cd /tmp/workspace/tools/PollHealthcheck
+            #node index.js https://${AZURE_APP_STAGING_URL}/health 500 15000
             # Swap into production
             echo "Performing swap..."
             az login --service-principal -u ${AZURE_SP_NAME} -p ${AZURE_SP_PASSWORD} --tenant ${AZURE_TENANT}
