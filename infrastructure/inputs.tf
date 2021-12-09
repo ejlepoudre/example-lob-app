@@ -7,13 +7,13 @@ variable "location" {
 }
 
 variable "sql-login" {
-  type = string
+  default = "sa"
 }
 
 variable "sql-password" {
-  type = string
+  default = "123"
 }
 
 variable "sql-threat-email" {
-  type = string
+  default = "ejlepoudre@gmail.com"
 }
