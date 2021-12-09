@@ -7,11 +7,11 @@ variable "location" {
 }
 
 variable "sql-login" {
-  default = "sa"
+  default = "saejl"
 }
 
 variable "sql-password" {
-  default = "123"
+  default = "123googLe$"
 }
 
 variable "sql-threat-email" {
