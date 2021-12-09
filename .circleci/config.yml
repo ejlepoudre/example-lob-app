@@ -202,9 +202,9 @@ jobs:
             az webapp config connection-string set -t SQLAzure -g ${AZURE_RG_NAME} -n ${AZURE_APP_NAME} -s staging --settings Database="${app_conn_string}"
 
             # Poll health endpoint, 500ms intervals, 15s timeout
-            echo "Running healthcheck poll: https://${AZURE_APP_STAGING_URL}/health"
-            cd /tmp/workspace/tools/PollHealthcheck
-            node index.js https://${AZURE_APP_STAGING_URL}/health 500 15000
+            #echo "Running healthcheck poll: https://${AZURE_APP_STAGING_URL}/health"
+            #cd /tmp/workspace/tools/PollHealthcheck
+            #node index.js https://${AZURE_APP_STAGING_URL}/health 500 15000
 
       - run:
           name: Database Migration
