@@ -114,20 +114,16 @@ jobs:
             terraform plan -out=tfplan -var "sql-login=saejls" -var "sql-password=123googLe$" -var "sql-threat-email=ejlepoudre@gmail.com"
             terraform show tfplan 
 
-            echo "apply start"
-            terraform apply "tfplan"  
-            echo "apply end"
+            
             echo "Checking status to continue..."
             
             count=$(terraform show tfplan | grep -c "Your infrastructure matches the configuration") || true
             if [ $count -gt 0 ]; then 
               echo "No changes, infrastructure is up to date";
             else 
-              echo "******************************************************************"
-              echo "* Terraform plan requires changes to be applied, cannot continue *";
-              echo "* Apply terraform changes before retrying this job               *";
-              echo "******************************************************************"
-              exit 1
+              echo "apply start"
+              terraform apply "tfplan"  
+              echo "apply end"
             fi
 
             echo $(terraform output resource_group_name) > ../tf-resource_group_name
