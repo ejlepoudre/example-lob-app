@@ -7,7 +7,7 @@ variable "location" {
 }
 
 variable "sql-login" {
-  default = "saejl"
+  default = "saejls"
 }
 
 variable "sql-password" {
