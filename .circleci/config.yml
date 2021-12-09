@@ -106,9 +106,11 @@ jobs:
           name: terraform plan
           command: |
             cd infrastructure
-            terraform init
+            echo "abc"
             echo "${SQL_ADMIN_PASSWORD}"
             echo "${SQL_THREAT_EMAIL}"
+            terraform init
+        
             terraform plan -out=tfplan -var "sql-login=$SQL_ADMIN_LOGIN" -var "sql-password=${SQL_ADMIN_PASSWORD}" -var "sql-threat-email=${SQL_THREAT_EMAIL}"
             terraform show tfplan
 
