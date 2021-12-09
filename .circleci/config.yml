@@ -111,11 +111,11 @@ jobs:
             echo "${SQL_THREAT_EMAIL}"
             terraform init
         
-            terraform plan -out=tfplan -var "sql-login=$SQL_ADMIN_LOGIN" -var "sql-password=${SQL_ADMIN_PASSWORD}" -var "sql-threat-email=${SQL_THREAT_EMAIL}"
+            terraform plan -out=tfplan -var "sql-login=sa" -var "sql-password=123" -var "sql-threat-email=ejlepoudre@gmail.com"
             terraform show tfplan 
 
             echo "apply start"
-            terraform apply "tfplan"  -var "sql-login=$SQL_ADMIN_LOGIN" -var "sql-password=${SQL_ADMIN_PASSWORD}" -var "sql-threat-email=${SQL_THREAT_EMAIL}"
+            terraform apply "tfplan"  
             echo "apply end"
             echo "Checking status to continue..."
             
