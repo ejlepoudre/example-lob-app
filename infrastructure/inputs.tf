@@ -1,5 +1,5 @@
 variable "resource_group_name" {
-  default = "tf-rg"
+  default = "tf-rg1"
 }
 
 variable "location" {

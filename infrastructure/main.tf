@@ -4,7 +4,7 @@ terraform {
     resource_group_name  = "terraform-rg"
     storage_account_name = "lobterraformstatestorejl"
     container_name       = "stateprod"
-    key                  = "dev.terraform.tfstate123456S"
+    key                  = "dev.terraform.tfstate123456Sq"
   }
   
   required_providers {
@@ -105,7 +105,7 @@ resource "azurerm_app_service_plan" "asp" {
 }
 
 resource "azurerm_app_service" "app" {
-  name                = "tf-app-lobex"
+  name                = "tf-app-lobex1"
   location            = var.location
   resource_group_name = azurerm_resource_group.rg.name
   app_service_plan_id = azurerm_app_service_plan.asp.id
