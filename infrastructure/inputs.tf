@@ -11,7 +11,7 @@ variable "sql-login" {
 }
 
 variable "sql-password" {
-  default = "123googLe$"
+  type = "string"
 }
 
 variable "sql-threat-email" {
