@@ -7,7 +7,7 @@ variable "location" {
 }
 
 variable "sql-login" {
-  default = "saejls"
+  type = string
 }
 
 variable "sql-password" {
@@ -15,5 +15,5 @@ variable "sql-password" {
 }
 
 variable "sql-threat-email" {
-  default = "ejlepoudre@gmail.com"
+  type = string
 }
