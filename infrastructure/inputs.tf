@@ -11,7 +11,7 @@ variable "sql-login" {
 }
 
 variable "sql-password" {
-  type = "string"
+  type = string
 }
 
 variable "sql-threat-email" {
